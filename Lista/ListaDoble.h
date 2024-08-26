@@ -88,10 +88,12 @@ void ListaDoble<T>::insertarUltimo(T dato) {
     NodoDoble<T>* nuevo = new NodoDoble<T>(dato);
 
     if (esVacia()) {
-        inicio = fin = nuevo;
+        inicio = nuevo;
+        fin = nuevo;
     } else {
         fin->setSiguiente(nuevo);
         nuevo->setAnterior(fin);
+        nuevo->setSiguiente(nullptr);
         fin = nuevo;
     }
 }
